@@ -42,5 +42,13 @@ namespace CreatingTypes
         {
             Assert.Throws<ArgumentException>(() => tWorker.FindNthRoot(number, n, eps));
         }
+
+        [MSUnitTest.TestMethod]
+        public void CheckFindingNthRootMSUnit()
+        {
+            Assert.AreEqual(1, tWorker.FindNthRoot(1, 1000, 0.1), 0.1);
+            Assert.AreEqual(0.5, tWorker.FindNthRoot(0.5, 1, 0.1), 0.1);
+            Assert.AreEqual(1.77245, tWorker.FindNthRoot(Math.PI, 2, 0.01), 0.01);
+        }
     }
 }
