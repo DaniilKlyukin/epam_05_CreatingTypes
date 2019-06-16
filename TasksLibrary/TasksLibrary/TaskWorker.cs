@@ -11,8 +11,12 @@
         {
             if (n % 2 == 0 && number < 0 || n <= 0 || eps <= 0)
                 throw new ArgumentException();
+            else if (n == 0 || number == 1)
+                return 1;
+            else if (number == 0)
+                return 0;
 
-            var xPrev = number / n;
+            var xPrev = number;
             var x = 0.0;
 
             var currentEps = 0.0;
