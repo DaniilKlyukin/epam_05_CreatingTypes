@@ -31,5 +31,8 @@
 
             return x;
         }
+
+        public void BubbleSort(int[,] array, IOrderable orderMethod, Direction d) 
+            => orderMethod.Order(array, d);
     }
 }
