@@ -129,8 +129,8 @@ namespace CreatingTypes
                     Direction = Direction.Descending,
                     ExpectedArray = new int[,]
                     {
-                        {-1,2,1,4 },
                         {-3,4,3,4 },
+                        {-1,2,1,4 },
                         {0,2,-1,4 }
                     }
                 }
@@ -161,8 +161,8 @@ namespace CreatingTypes
                     {
                         {32,32 },
                         {10,20 },
-                        {1,2 },
                         {1,3 },
+                        {1,2 },
                         {0,1 },
                         {-50,1 }
                     }
