@@ -16,6 +16,12 @@
             }
         }
 
+        /// <summary>
+        /// Evaluates rows using the specified evaluating method.
+        /// </summary>
+        /// <param name="arr">Input matrix.</param>
+        /// <param name="evaluate">Evaluation method.</param>
+        /// <returns>Rows estimates.</returns>
         protected RowInfo[] CalculateInfo(int[,] arr, RowEvaluator evaluate)
         {
             var rows = arr.GetLength(0);
@@ -30,11 +36,11 @@
         }
 
         /// <summary>
-        /// 
+        /// Bubble matrix sorting by rows based on information about them.
         /// </summary>
-        /// <param name="arr"></param>
-        /// <param name="rowsInfo"></param>
-        /// <param name="d"></param>
+        /// <param name="arr">Input matrix.</param>
+        /// <param name="rowsInfo">Row information i.e.data that evaluate the row.</param>
+        /// <param name="d">Ordering Method (Ascending / Descending).</param>
         protected void BubbleSort(int[,] arr, RowInfo[] rowsInfo, Direction d)
         {
             var rows = arr.GetLength(0);
