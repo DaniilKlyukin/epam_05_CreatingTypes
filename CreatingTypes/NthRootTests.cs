@@ -47,6 +47,8 @@ namespace CreatingTypes
             Assert.AreEqual(1, tWorker.FindNthRoot(1, 1000, 0.1), 0.1);
             Assert.AreEqual(0.5, tWorker.FindNthRoot(0.5, 1, 0.1), 0.1);
             Assert.AreEqual(1.77245, tWorker.FindNthRoot(Math.PI, 2, 0.01), 0.01);
+            Assert.AreEqual(Math.Sqrt(int.MaxValue), tWorker.FindNthRoot(int.MaxValue, 2, 0.1), 0.1);
+            Assert.AreEqual(-1290.159155, tWorker.FindNthRoot(int.MinValue, 3, 0.1), 0.1);
         }
     }
 }
