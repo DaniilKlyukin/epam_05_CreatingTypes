@@ -15,7 +15,7 @@ namespace Tests
         {
             var testData = new BubbleSortTestData[]
             {
-                new BubbleSortTestData()
+                new BubbleSortTestData() // Descending test
                 {
                     ActualArray = new int[,]
                     {
@@ -32,7 +32,7 @@ namespace Tests
                         {1,2 }
                     }
                 },
-                new BubbleSortTestData()
+                new BubbleSortTestData() // Ascending test
                 {
                     ActualArray = new int[,]
                     {
@@ -48,6 +48,21 @@ namespace Tests
                         {0,5 },
                         {3,4 }
                     }
+                },
+                new BubbleSortTestData()  // Boundary values
+                {
+                    ActualArray = new int[,]
+                    {
+                        {int.MaxValue,int.MinValue },
+                        {int.MinValue,int.MaxValue }
+                    },
+                    OrderMethod = new OrderByRowSum(),
+                    Direction = Direction.Descending,
+                    ExpectedArray = new int[,]
+                    {
+                        {int.MaxValue,int.MinValue },
+                        {int.MinValue,int.MaxValue }
+                    }
                 }
             };
 
@@ -59,7 +74,7 @@ namespace Tests
         {
             var testData = new BubbleSortTestData[]
             {
-                new BubbleSortTestData()
+                new BubbleSortTestData() // Common test
                 {
                     ActualArray = new int[,]
                     {
@@ -76,7 +91,7 @@ namespace Tests
                         {1,2,30 }
                     }
                 },
-                new BubbleSortTestData()
+                new BubbleSortTestData() // First order maximums are equal
                 {
                     ActualArray = new int[,]
                     {
@@ -92,6 +107,23 @@ namespace Tests
                         {-1,2,1,4 },
                         {0,2,-1,4 }
                     }
+                },
+                new BubbleSortTestData() // Only the maximums of the last order are not equal
+                {
+                    ActualArray = new int[,]
+                    {
+                        {4,3,2,1,0 },
+                        {4,3,2,1,-1 },
+                        {4,3,2,1,-2 }
+                    },
+                    OrderMethod = new OrderByRowMaxElement(),
+                    Direction = Direction.Ascending,
+                    ExpectedArray = new int[,]
+                    {
+                        {4,3,2,1,-2 },
+                        {4,3,2,1,-1 },
+                        {4,3,2,1,0 }
+                    }
                 }
             };
 
@@ -103,7 +135,7 @@ namespace Tests
         {
             var testData = new BubbleSortTestData[]
             {
-                new BubbleSortTestData()
+                new BubbleSortTestData() // Negative number
                 {
                     ActualArray = new int[,]
                     {
@@ -126,7 +158,7 @@ namespace Tests
                         {-50,1 }
                     }
                 },
-                new BubbleSortTestData()
+                new BubbleSortTestData() // 1 element in row
                 {
                     ActualArray = new int[,]
                     {
@@ -141,6 +173,19 @@ namespace Tests
                         {0},
                         {1},
                         {3}
+                    }
+                },
+                new BubbleSortTestData() // 1 element matrix
+                {
+                    ActualArray = new int[,]
+                    {
+                        {1}
+                    },
+                    OrderMethod = new OrderByRowMinElement(),
+                    Direction = Direction.Ascending,
+                    ExpectedArray = new int[,]
+                    {
+                        {1}
                     }
                 }
             };
